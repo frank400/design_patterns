@@ -1,6 +1,6 @@
 import OCP.*;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class OCPtest {
+public class OCPTest {
   public static Jornal extra;
 
   @BeforeEach
@@ -37,7 +37,7 @@ public class OCPtest {
     ArticleFilter af = new ArticleFilter();
 
     Stream<Article> filteredArticles = af.filter(extra.getArticles(), spec);
-    Assertions.assertEquals(filteredArticles.count(),3);
+    assertEquals(filteredArticles.count(),3);
   }
   @Test
   public void testDateFilter() {
@@ -45,6 +45,6 @@ public class OCPtest {
     ArticleFilter af = new ArticleFilter();
 
     Stream<Article> filteredArticles = af.filter(extra.getArticles(), spec);
-    Assertions.assertEquals(filteredArticles.count(),2);
+    assertEquals(filteredArticles.count(),2);
   }
 }
