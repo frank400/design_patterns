@@ -5,27 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class People {
-  private String name;
-  private Long PostalCode;
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public void setPostalCode(Long postalCode) {
-    PostalCode = postalCode;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public Long getPostalCode() {
-    return PostalCode;
-  }
-}
-
 public class PostalCodeToPeoples implements PostalCodeBrowser {
   private List<People> peoples = new ArrayList<>();
   private List<Long> postalCodes = new ArrayList<>();
@@ -46,14 +25,7 @@ public class PostalCodeToPeoples implements PostalCodeBrowser {
 
   @Override
   public List<People> findAllResidents(Long postalCode) {
-    return null;
+    return postalCodesToPeoplesMap.get(postalCode);
   }
 }
-public interface PostalCodeBrowser {
-  public List<People> findAllResidents(Long postalCode);
-}
-public class PostalCodeSearch{
-  public static List<People> search(Long PostalCode){
-    return null;
-  }
-}
+
